@@ -1,21 +1,22 @@
 import discord
+TOKEN = "NTcwMjgwMjMwMTg3NTY1MDU2.XL86Qw.GyFP-zN1cxco28qj8HexiqvU_lw"
 
 client = discord.Client()
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
-        return
-
+    #hello
     if message.content.startswith("!hello"):
         msg = "Hello {0.author.mention}".format(message)
+        if "Exec" or "Subcom" in (role.name for role in message.author.roles):
+            print("Yay")
         await message.channel.send(msg)
 
-@client.event
-async def on_ready():
-    print("Logged in as")
-    print(client.user.name)
-    print(client.user.id)
-    print("------")
+    #FF
+    if message.content == "!FF":
+        msg = "Welcome to UNSW LoLSoc's Week {} Friendly Friday, an event PROUDLY sponsored by Arc Clubs"
 
-client.run('NTcwMjgwMjMwMTg3NTY1MDU2.XL86Qw.GyFP-zN1cxco28qj8HexiqvU_lw')
+
+
+
+client.run(TOKEN)
