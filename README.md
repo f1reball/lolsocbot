@@ -1,1 +1,3 @@
 # lolsocbot
+A very basic discord bot...
+Was going to be implimented within the server.... however not required
